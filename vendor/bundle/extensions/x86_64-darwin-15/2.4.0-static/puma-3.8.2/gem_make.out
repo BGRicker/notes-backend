@@ -1,0 +1,25 @@
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/puma-3.8.2/ext/puma_http11
+/Users/bricker/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170502-21093-b2sx4j.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/extensions/x86_64-darwin-15/2.4.0-static/puma-3.8.2/mkmf.log
+
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/puma-3.8.2/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/puma-3.8.2/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/puma-3.8.2/ext/puma_http11
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20170502-21093-zjpbyi/puma

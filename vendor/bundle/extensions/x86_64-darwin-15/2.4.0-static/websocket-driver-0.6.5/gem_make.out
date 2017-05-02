@@ -1,0 +1,15 @@
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+/Users/bricker/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170502-21093-hg8omw.rb extconf.rb
+creating Makefile
+
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/bricker/Code/p/fhp/projects/notes-api/notes/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20170502-21093-ny25gr
