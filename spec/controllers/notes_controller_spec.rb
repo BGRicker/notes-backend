@@ -7,4 +7,25 @@ RSpec.describe NotesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "notes#create action" do
+    before do
+      post :create, params: { note: { title: "One objective truth", content: 'The Autozone commercial guy is creepy as hell' } }
+    end
+    it "should return 200 status code" do
+      expect(response).to be_success
+    end
+
+    it "should successfully create and save a new note" do
+      note = Note.last
+      expect(note.title).to eq('One objective truth')
+      expect(note.content).to eq('The Autozone commercial guy is creepy as hell')
+    end
+
+    it "should return the created note in response body" do
+      json = JSON.parse(response.body)
+      expect(json['title']).to eq('One objective truth')
+      expect(json['content']).to eq('The Autozone commercial guy is creepy as hell')
+    end
+  end
 end
