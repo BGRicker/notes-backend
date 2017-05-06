@@ -28,4 +28,20 @@ RSpec.describe NotesController, type: :controller do
       expect(json['content']).to eq('The Autozone commercial guy is creepy as hell')
     end
   end
+
+  describe "notes#create validations" do
+    before do
+      post :create, params: { note: { title: '', content: '' } }
+    end
+
+    it "should not take empty values" do
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+
+    it "should show validation errors" do
+      json = JSON.parse(response.body)
+      expect(json["errors"]["title"][0]).to eq("can't be blank")
+      expect(json["errors"]["content"][0]).to eq("can't be blank")
+    end
+  end
 end
