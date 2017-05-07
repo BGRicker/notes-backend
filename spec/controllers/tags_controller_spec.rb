@@ -15,4 +15,20 @@ RSpec.describe TagsController, type: :controller do
 			expect(@note.tags.count).to eq(1)
 		end
 	end
+
+	describe "tags#create validations" do
+		before do
+			note = FactoryGirl.create(:note)
+			post :create, params: { tag: { name: '' }, note_id: note.id }
+		end
+
+		it "should properly deal with validation error" do
+			expect(response).to have_http_status(:unprocessable_entity)
+		end
+
+		it "returns json error on validation error" do
+			json = JSON.parse(response.body)
+			expect(json['errors']['name'][0]).to eq("can't be blank")
+		end
+	end
 end
