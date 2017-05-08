@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :tag do
+    name "cool tag"
   end
 
   factory :note, class: Note do
