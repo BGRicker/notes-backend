@@ -4,14 +4,14 @@ class NotesController < ApplicationController
 		render json: notes.as_json(include: :tags)
 	end
 
-	def create
-		note = Note.create(note_params)
-		if note.valid?
-			render json: note, status: :created
-		else
-			render json: render_errors(note), status: :unprocessable_entity
-		end
-	end
+  def create
+    note = Note.create(note_params)
+    if note.valid?
+      render json: note, status: :created
+    else
+      render json: render_errors(note), status: :unprocessable_entity
+    end
+  end
 
 	def show
 		note = Note.find(params[:id])
