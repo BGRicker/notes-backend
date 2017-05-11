@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 	def index
 		notes = Note.order(id: :asc)
-		render json: notes
+		render json: notes.as_json(include: :tags)
 	end
 
 	def create
@@ -15,7 +15,7 @@ class NotesController < ApplicationController
 
 	def show
 		note = Note.find(params[:id])
-		render json: note
+		render json: note.as_json(include: :tags)
 	end
 
 	def update
